@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fas fa-calculator"></i> Counter App</h1>
+        </header>
+        
+        <main>
+            <div class="card category-card">
+                <h2>Manage Categories</h2>
+                <div class="input-group">
+                    <input type="text" id="new-category" placeholder="Enter new category name">
+                    <button id="add-category" class="btn primary-btn">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                    <button id="delete-category" class="btn danger-btn">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card counter-card">
+                <h2>Counter Controls</h2>
+                <div class="select-wrapper">
+                    <label for="category-select">Select Category:</label>
+                    <select id="category-select"></select>
+                </div>
+                
+                <div id="current-value" class="value-display">0</div>
+                
+                <div class="button-grid">
+                    <button id="increment" class="btn success-btn">
+                        <i class="fas fa-plus"></i> Increment
+                    </button>
+                    <button id="increment-half" class="btn success-light-btn">
+                        <i class="fas fa-plus-circle"></i> +0.5
+                    </button>
+                    <button id="decrement" class="btn warning-btn">
+                        <i class="fas fa-minus"></i> Decrement
+                    </button>
+                    <button id="decrement-half" class="btn warning-light-btn">
+                        <i class="fas fa-minus-circle"></i> -0.5
+                    </button>
+                    <button id="reset" class="btn secondary-btn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card table-card">
+                <h2>Statistics</h2>
+                <div class="table-container">
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Value</th>
+                                <th>Last Updated</th>
+                                <th>Added Today</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Counter App &copy; 2023</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
